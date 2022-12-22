@@ -1,0 +1,4 @@
+Test-Command: /usr/sbin/rdate 2>&1 | grep Usage
+
+Test-Command: rdate -n4pv 127.0.0.1 || exit 77
+Restrictions: allow-stderr, needs-root, skippable

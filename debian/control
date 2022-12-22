@@ -1,0 +1,30 @@
+Source: rdate
+Section: net
+Priority: optional
+Maintainer: Thiago Andrade Marques <andrade@debian.org>
+Build-Depends: debhelper-compat (= 13), libbsd-dev
+Standards-Version: 4.6.0
+Rules-Requires-Root: binary-targets
+Homepage: https://github.com/resurrecting-open-source-projects/openrdate
+Vcs-Browser: https://salsa.debian.org/debian/rdate
+Vcs-Git: https://salsa.debian.org/debian/rdate.git
+
+Package: rdate
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Replaces: netstd
+Description: sets the system's date from a remote host with network time protocol
+ OpenRdate or openrdate or rdate displays and sets the local date and time from
+ the host name or address given as the argument. The time source may be an RFC
+ 868 TCP protocol server, which is usually implemented as a built-in service of
+ inetd(8), or an RFC 5905 protocol SNTP/NTP server. By default, rdate uses the
+ RFC 868 TCP protocol.
+ .
+ OpenRdate supports IPv4 and IPv6 protocols.
+
+Package: rdate-udeb
+Section: debian-installer
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Package-Type: udeb
+Description: sets the system's date from a remote host

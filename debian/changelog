@@ -1,0 +1,307 @@
+rdate (1:1.10.2-1) unstable; urgency=medium
+
+  * New upstream version 1.10.2. (Closes: #988649)
+  * debian/control: bumped Standards-Version to 4.6.0.
+  * debian/copyright: updated the upstream and packaging copyright years.
+  * debian/watch: updated the search rule to make it compliant with new
+    standards from GitHub.
+
+ -- Thiago Andrade Marques <andrade@debian.org>  Thu, 23 Sep 2021 09:34:15 -0300
+
+rdate (1:1.10-4) unstable; urgency=medium
+
+  * debian/control:
+      - Bumped "debhelper-compat" from 12 to 13.
+      - Updated my email.
+  * debian/copyright: updated my email.
+  * debian/upstream/metadata: created.
+  * debian/watch: updated.
+
+ -- Thiago Andrade Marques <andrade@debian.org>  Sun, 26 Jul 2020 16:12:56 -0300
+
+rdate (1:1.10-3) unstable; urgency=medium
+
+  * debian/control: bumped Standards Version to 4.5.0.
+  * debian/copyright: updated packaging copyright years.
+
+ -- Thiago Andrade Marques <thmarques@gmail.com>  Wed, 11 Mar 2020 23:18:09 -0300
+
+rdate (1:1.10-2) unstable; urgency=medium
+
+  * debian/copyright:
+      - debian/* was relicensed to BSD-3-clause. (Closes: #942158)
+  * debian/salsa-ci.yml: added to provide CI tests for Salsa.
+  * debian/tests/control: fixed a trivial CI test and added a new test.
+
+ -- Thiago Andrade Marques <thmarques@gmail.com>  Sun, 27 Oct 2019 18:50:10 -0300
+
+rdate (1:1.10-1) unstable; urgency=medium
+
+  * New maintainer. (Closes: #925059)
+  * New upstream version 1.10. (Closes: #523513, #941391)
+  * debian/control:
+      - Bumped Standards Version to 4.4.1.
+      - Updated short and long description.
+      - Updated the homepage field. (Closes: #941391)
+  * debian/copyright: full updated.
+  * debian/docs: added some important upstream files.
+  * debian/patches/*: removed all patches. Upstream fixed the source code.
+  * debian/rules: removed LDFLAGS, no longer needed.
+  * debian/watch: updated, new upstream site.
+
+ -- Thiago Andrade Marques <thmarques@gmail.com>  Wed, 09 Oct 2019 18:03:00 -0300
+
+rdate (1:1.2-8) unstable; urgency=medium
+
+  [ Thiago Andrade Marques ]
+  * QA upload.
+  * debian/control:
+      - added VCS fields.
+      - explicit set Rules-Requires-Root to binary-targets.
+  * debian/copyright: added rights for Joao Eriberto Mota Filho.
+  * debian/tests/control: fixed the trivial CI test.
+
+  [ Joao Eriberto Mota Filho ]
+  * debian/patches/040_use-libbsd.patch: fixed to avoid a FTBFS
+    after a debclean.
+
+ -- Thiago Andrade Marques <thmarques@gmail.com>  Mon, 23 Sep 2019 21:05:54 -0300
+
+rdate (1:1.2-7) unstable; urgency=medium
+
+  * QA upload.
+  * Set Debian QA Group as maintainer. (see #925059)
+  * Using new DH level format. Consequently:
+      - debian/compat: removed.
+      - debian/control: changed from 'debhelper >= 9' to
+        'debhelper-compat = 12' in Build-Depends field.
+  * debian/control:
+      - bumped Standards-Version to 4.4.0.
+      - homepage: using https instead of http.
+      - removed no longer needed build-depends: autotools-dev and dpkg-dev.
+      - removed field "Priority" in package rdate-udeb.
+  * debian/copyright:
+      - Migrated to 1.0 format.
+      - Updated all data.
+  * debian/dirs: removed no more needed.
+  * debian/docs: added the AUTHORS file.
+  * debian/patches:
+      - 02-434140-unaligned-read.patch renamed to 010_unaligned-read.patch.
+      - 04-434452-avoid-libnss-files-library.patch renamed to
+        020_avoid-libnss-files-library.patch.
+      - 06-491540-add-progress.patch renamed to 030_add-progress.patch.
+      - 08-538695-use-libbsd.patch renamed to 040_use-libbsd.patch.
+      - 10-515219-socklen.patch renamed to 050_socklen.patch.
+      - Updated all previous headers in all patches.
+  * debian/rdate.install:
+      - Created to install rdate.
+      - Changed the installation folder from usr/bin to usr/sbin.
+  * debian/rdate.manpages: created to install the manpage.
+  * debian/rdate-udeb.dirs: removed no more needed.
+  * debian/rdate-udeb.install:
+      - Created to install rdate.
+      - Changed the installation folder from usr/bin to usr/sbin.
+  * debian/README.source: removed no more needed.
+  * debian/rules: migrated to new (reduced) format.
+  * debian/tests/control: created to perform a test.
+  * debian/watch:
+      - migrated to version 4.
+      - using https instead of http.
+
+ -- Thiago Andrade Marques <thmarques@gmail.com>  Wed, 18 Sep 2019 15:47:26 -0300
+
+rdate (1:1.2-6) unstable; urgency=medium
+
+  * Standards-Version is 3.9.5.
+  * Use default compression for binary packages.
+  * Refresh patches.
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Thu, 11 Sep 2014 06:26:29 +0100
+
+rdate (1:1.2-5) unstable; urgency=low
+
+  * Use new libbsd header
+    Patch by Guillem Jover
+    Closes: #670181
+  * Debian source format is 3.0 (quilt)
+  * DH compatibility is 9
+  * Fix xc-package-type-in-debian-control
+  * Fix debian-rules-missing-recommended-target
+  * Fix ancient-standards-version
+  * Fix debian-watch-file-should-use-sf-redirector
+  * Fix hardening-no-stackprotector
+  * Fix hardening-no-fortify-functions
+  * Fix hardening-no-relro
+  * Fix copyright-with-old-dh-make-debian-copyright
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Wed, 30 May 2012 16:03:14 +1000
+
+rdate (1:1.2-4) unstable; urgency=low
+
+  * Connect to an NTP server over IPv6
+    Patch by Jakub Wilk
+    Closes: 515219
+  * Fix out-of-date-standards-version
+  * Fix patch-system-but-no-source-readme
+  * Update debian/watch
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Wed, 26 Aug 2009 12:43:48 +1000
+
+rdate (1:1.2-3) unstable; urgency=low
+
+  [ Cyril Brulebois ]
+  * Use arc4random from libbsd:
+    - Add patch to drop the embedded code copy: 08-538695-use-libbsd.patch
+    - Add libbsd-dev to Build-Depends.
+    - Closes: 538695
+
+  [ Anibal Monsalve Salazar ]
+  * Standards-Version is 3.8.2
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Thu, 30 Jul 2009 15:27:14 +0200
+
+rdate (1:1.2-1) unstable; urgency=low
+
+  * New upstream release
+    - Don't use the deprecated sysctl system call with 1.40; closes: #483470
+  * Build depend on quilt
+  * Standards Version is 3.8.1
+  * DH compatibility is 7
+  * Run dh_prep instead of dh_clean -k
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Sat, 23 May 2009 16:56:55 +1000
+
+rdate (1:1.1.3-2) unstable; urgency=low
+
+  [ Jérémy Bobbio ]
+  * When "-vv" is specified, rdate now displays a dot each time it tries
+    to send a packet to the NTP server.  This is needed to implement
+    cancelation of time synchronization in the debian-installer.
+    Closes: 491540.
+
+  [ Anibal Monsalve Salazar ]
+  * Standards-Version is 3.8.0
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Sun, 20 Jul 2008 20:36:19 +1000
+
+rdate (1:1.1.3-1) unstable; urgency=low
+
+  * New upstream release
+  * Added debian/watch
+  * Added homepage control header
+  * Bumped Standards-Version to 3.7.3
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Fri, 29 Feb 2008 23:30:03 +1100
+
+rdate (1:1.1.2-5) unstable; urgency=low
+
+  * Allowed "rdate -o 123 -n" w/o needing libnss_files and
+    /etc/services, closes: #434452.
+    Patch by Joey Hess <joeyh@debian.org>
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Tue, 24 Jul 2007 09:50:19 +1000
+
+rdate (1:1.1.2-4) unstable; urgency=low
+
+  * The packages description mentions SNTP support. Closes: #434244.
+  * Minimized the size of the rdate binary in the udeb. Closes: #434441.
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Tue, 24 Jul 2007 08:29:49 +1000
+
+rdate (1:1.1.2-3) unstable; urgency=low
+
+  * Fixed "unaligned access in ntp code triggers SIGBUS on sparc,
+    others", closes: #434140.
+    Patch by Steve Langasek <vorlon@debian.org>.
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Sun, 22 Jul 2007 11:29:36 +1000
+
+rdate (1:1.1.2-2) unstable; urgency=low
+
+  * New binary package rdate-udeb as per D-I meeting during debconf7
+    in Edinburgh.
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Sat, 21 Jul 2007 15:17:52 +1000
+
+rdate (1:1.1.2-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Sun, 08 Jul 2007 20:52:51 +1000
+
+rdate (1.4-8) unstable; urgency=low
+
+  * Set DH_COMPAT to 5.
+  * Set Standards-Version to 3.7.2.
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Thu, 22 Jun 2006 18:45:50 +1000
+
+rdate (1.4-7) unstable; urgency=low
+
+  * Fixed "'Usage' is missing recently added 'u' option.", closes:
+    #339798. Patch by Gonzalo Paniagua Javier <gonzalo@gnome-db.org>.
+  * Set Standards-Version to 3.6.2 and added homepage to description.
+  * Added watch file.
+  * Fixed lintian error "package-uses-deprecated-debhelper-compat-
+    version 2".
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Sun, 27 Nov 2005 09:34:00 +1100
+
+rdate (1.4-6) unstable; urgency=low
+
+  * Fixed "rdate should have an option to use UDP" (Closes: #291522).
+    Patch by Adrian Frith <adrian@frith.homelinux.org>.
+  * New maintainer's email address.
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Mon, 07 Feb 2005 23:15:12 +1100
+
+rdate (1.4-5) unstable; urgency=low
+
+  * New maintainer.
+
+ -- Anibal Monsalve Salazar <A.Monsalve.Salazar@IEEE.org>  Thu, 20 May 2004 10:06:28 +1000
+
+rdate (1.4-4) unstable; urgency=low
+
+  * Documented port argument.
+  * Print time using locale information (closes: #185143).
+
+ -- Herbert Xu <herbert@debian.org>  Sat,  5 Apr 2003 16:48:48 +1000
+
+rdate (1.4-3) unstable; urgency=low
+
+  * Added build-time dependency on pmake (closes: #168030, 168035).
+
+ -- Herbert Xu <herbert@debian.org>  Thu,  7 Nov 2002 07:10:57 +1100
+
+rdate (1.4-2) unstable; urgency=low
+
+  * Added optional port argument (closes: #156101).
+  * Added build-time dependency on debhelper.
+
+ -- Herbert Xu <herbert@debian.org>  Wed,  6 Nov 2002 20:06:24 +1100
+
+rdate (1.4-1) unstable; urgency=low
+
+  * Synced with NetBSD 20020411:
+   . Adds support for IPv6.
+
+ -- Herbert Xu <herbert@debian.org>  Thu, 11 Apr 2002 20:26:19 +1000
+
+rdate (1.3-3) frozen unstable; urgency=low
+
+  * Corrected the license in copyright (closes: #52289).
+
+ -- Herbert Xu <herbert@debian.org>  Fri, 26 Nov 1999 08:36:31 +1100
+
+rdate (1.3-2) unstable; urgency=low
+
+  * Fixed an Alpha bug introduced when applying the netstd patch.
+
+ -- Herbert Xu <herbert@debian.org>  Fri, 26 Nov 1999 08:36:31 +1100
+
+rdate (1.3-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Herbert Xu <herbert@debian.org>  Fri,  5 Nov 1999 20:22:06 +1100
